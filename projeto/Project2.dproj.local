@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/09/22 17:45:01.000.997,=C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2024/09/22 17:45:19.000.506,C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit3.dfm=C:\Users\Milton\Documents\film-showcase-delphi\ProjetoFilmes.dfm</Transaction>
+    <Transaction>2024/09/22 17:45:19.000.506,C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit3.pas=C:\Users\Milton\Documents\film-showcase-delphi\ProjetoFilmes.pas</Transaction>
+    <Transaction>2024/09/22 17:50:43.000.856,=C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit4.pas</Transaction>
+    <Transaction>2024/09/22 17:54:24.000.927,C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit4.dfm=C:\Users\Milton\Documents\film-showcase-delphi\Unit4.dfm</Transaction>
+    <Transaction>2024/09/22 17:54:24.000.927,C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Unit4.pas=C:\Users\Milton\Documents\film-showcase-delphi\Unit4.pas</Transaction>
+    <Transaction>2024/09/22 18:17:09.000.150,C:\Users\Milton\Documents\Embarcadero\Studio\Projects\Project2.dproj=C:\Users\Milton\Documents\film-showcase-delphi\Project2.dproj</Transaction>
+    <Transaction>2024/09/22 18:21:21.141,=C:\Users\Milton\Documents\film-showcase-delphi\Unit1.pas</Transaction>
+    <Transaction>2024/09/22 18:22:22.700,C:\Users\Milton\Documents\film-showcase-delphi\FormDiretores.dfm=C:\Users\Milton\Documents\film-showcase-delphi\Unit1.dfm</Transaction>
+    <Transaction>2024/09/22 18:22:22.700,C:\Users\Milton\Documents\film-showcase-delphi\FormDiretores.pas=C:\Users\Milton\Documents\film-showcase-delphi\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
