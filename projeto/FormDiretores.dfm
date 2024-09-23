@@ -43,33 +43,33 @@ object Form1: TForm1
     Top = 16
     Width = 145
     Height = 23
-    DataSource = DataSource1
+    DataSource = DataSourceFilmes
     KeyField = 'Id'
     ListField = 'Nome'
     TabOrder = 3
   end
-  object SQLQuery1: TSQLQuery
+  object SQLQueryFilmes: TSQLQuery
     Params = <>
     SQL.Strings = (
       'SELECT Id, Nome FROM cartaz')
     Left = 488
     Top = 72
   end
-  object DataSetProvider1: TDataSetProvider
-    DataSet = SQLQuery1
+  object DataSetProviderFilmes: TDataSetProvider
+    DataSet = SQLQueryFilmes
     Left = 488
     Top = 152
   end
-  object ClientDataSet1: TClientDataSet
+  object ClientDataSetFilmes: TClientDataSet
     Aggregates = <>
     Params = <>
     ProviderName = 'DataSetProvider1'
     Left = 488
     Top = 232
   end
-  object DataSource1: TDataSource
-    DataSet = ClientDataSet1
+  object DataSourceFilmes: TDataSource
+    DataSet = ClientDataSetFilmes
     Left = 488
-    Top = 312
+    Top = 336
   end
 end

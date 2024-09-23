@@ -35,12 +35,19 @@ implementation
 
 procedure TForm3.FormCreate(Sender: TObject);
 begin
+
   SQLConnection1.Open;
+
   SQLQuery1.SQL.Text := 'SELECT * FROM cartaz';
   SQLQuery1.Open;
-  ClientDataSet1.SetProvider(DataSetProvider1);
+
+  ClientDataSet1.ProviderName := 'DataSetProvider1';
+
   ClientDataSet1.Open;
 
+  DataSource1.DataSet := ClientDataSet1;
+
+  DBGrid1.DataSource := DataSource1;
 end;
 
 end.

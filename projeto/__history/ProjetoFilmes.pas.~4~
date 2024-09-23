@@ -1,0 +1,59 @@
+unit ProjetoFilmes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DBXMySQL, Data.FMTBcd, Data.DB,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids,
+  Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr;
+
+type
+  TForm3 = class(TForm)
+    SQLConnection1: TSQLConnection;
+    SQLQuery1: TSQLQuery;
+    DataSetProvider1: TDataSetProvider;
+    ClientDataSet1: TClientDataSet;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form3: TForm3;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm3.FormCreate(Sender: TObject);
+begin
+  // Abre a conexão com o banco de dados
+  SQLConnection1.Open;
+
+  // Define e executa a consulta SQL
+  SQLQuery1.SQL.Text := 'SELECT * FROM cartaz';
+  SQLQuery1.Open;
+
+  // Liga o ClientDataSet ao DataSetProvider
+  ClientDataSet1.ProviderName := 'DataSetProvider1';
+
+  // Abre o ClientDataSet para carregar os dados
+  ClientDataSet1.Open;
+
+  // Liga o DataSource ao ClientDataSet
+  DataSource1.DataSet := ClientDataSet1;
+
+  // Liga o DBGrid ao DataSource para exibir os dados
+  DBGrid1.DataSource := DataSource1;
+end;
+
+end.
+

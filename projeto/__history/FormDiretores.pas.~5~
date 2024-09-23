@@ -1,0 +1,72 @@
+unit FormDiretores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB,
+  Data.FMTBcd, Datasnap.DBClient, Datasnap.Provider, Data.SqlExpr, Vcl.DBCtrls,
+  Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm1 = class(TForm)
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBLookupComboBox1: TDBLookupComboBox;
+    SQLQueryDiretores: TSQLQuery;
+    DataSetProviderDiretores: TDataSetProvider;
+    ClientDataSetDiretores: TClientDataSet;
+    DataSourceDiretores: TDataSource;
+    SQLQueryFilmes: TSQLQuery;
+    DataSetProviderFilmes: TDataSetProvider;
+    // Certifique-se de que o componente está no .dfm
+    ClientDataSetFilmes: TClientDataSet;
+    DataSourceFilmes: TDataSource;
+    SQLConnection1: TSQLConnection; // Conexão com o banco de dados
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  // Abre a conexão com o banco de dados
+  SQLConnection1.Open;
+
+  // Carregar dados da tabela 'diretor'
+  SQLQueryDiretores.SQL.Text := 'SELECT * FROM diretor';
+  SQLQueryDiretores.Open;
+
+  // Configura o ClientDataSet para usar o DataSetProvider correspondente
+  ClientDataSetDiretores.ProviderName := 'DataSetProviderDiretores';
+  ClientDataSetDiretores.Open;
+
+  // Carregar dados da tabela 'cartaz'
+  SQLQueryFilmes.SQL.Text := 'SELECT Id, Nome FROM cartaz';
+  SQLQueryFilmes.Open;
+
+  // Configura o ClientDataSet para usar o DataSetProvider correspondente
+  ClientDataSetFilmes.ProviderName := 'DataSetProviderFilmes';
+  // Verifique se este componente existe
+  ClientDataSetFilmes.Open;
+
+  // Configura o DBLookupComboBox para exibir os filmes no combo box
+  DBLookupComboBox1.DataSource := DataSourceFilmes;
+  DBLookupComboBox1.ListField := 'Nome';
+  DBLookupComboBox1.KeyField := 'Id';
+
+  // Configura o DBGrid para exibir os dados da tabela 'diretor'
+  DBGrid1.DataSource := DataSourceDiretores;
+end;
+
+end.
